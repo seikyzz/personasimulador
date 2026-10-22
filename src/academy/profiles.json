@@ -1,0 +1,709 @@
+{
+  "p3r": {
+    "pixie": {
+      "name": "Pixie",
+      "level": 2,
+      "arcana": "Lovers",
+      "skills": [
+        {
+          "name": "Dia",
+          "level": 2,
+          "element": "Cura",
+          "initial": true
+        },
+        {
+          "name": "Pulinpa",
+          "level": 2,
+          "element": "Estado",
+          "initial": true
+        },
+        {
+          "name": "Zio",
+          "level": 4,
+          "element": "Eletricidade",
+          "initial": false
+        },
+        {
+          "name": "Tarukaja",
+          "level": 5,
+          "element": "Suporte",
+          "initial": false
+        },
+        {
+          "name": "Resist Confuse",
+          "level": 6,
+          "element": "Passiva",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Gelo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Eletricidade",
+          "affinity": "Resiste"
+        }
+      ],
+      "coverage": [
+        "Cura",
+        "Estado"
+      ]
+    },
+    "jack-frost": {
+      "name": "Jack Frost",
+      "level": 8,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Bufu",
+          "level": 8,
+          "element": "Gelo",
+          "initial": true
+        },
+        {
+          "name": "Pulinpa",
+          "level": 8,
+          "element": "Estado",
+          "initial": true
+        },
+        {
+          "name": "Mabufu",
+          "level": 10,
+          "element": "Gelo",
+          "initial": false
+        },
+        {
+          "name": "Sonic Punch",
+          "level": 11,
+          "element": "Impacto",
+          "initial": false
+        },
+        {
+          "name": "Freeze Boost",
+          "level": 12,
+          "element": "Passiva",
+          "initial": false
+        },
+        {
+          "name": "Ice Boost",
+          "level": 13,
+          "element": "Passiva",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Anula"
+        }
+      ],
+      "coverage": [
+        "Gelo",
+        "Estado"
+      ]
+    },
+    "jack-o-lantern": {
+      "name": "Jack-o'-Lantern",
+      "level": 15,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Agi",
+          "level": 15,
+          "element": "Fogo",
+          "initial": true
+        },
+        {
+          "name": "Maragi",
+          "level": 15,
+          "element": "Fogo",
+          "initial": true
+        },
+        {
+          "name": "Provoke",
+          "level": 15,
+          "element": "Estado",
+          "initial": true
+        },
+        {
+          "name": "Rage Boost",
+          "level": 17,
+          "element": "Passiva",
+          "initial": false
+        },
+        {
+          "name": "Dodge Ice",
+          "level": 19,
+          "element": "Passiva",
+          "initial": false
+        },
+        {
+          "name": "Agilao",
+          "level": 21,
+          "element": "Fogo",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Anula"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": [
+        "Fogo",
+        "Estado"
+      ]
+    },
+    "angel": {
+      "name": "Angel",
+      "level": 4,
+      "arcana": "Justice",
+      "skills": [
+        {
+          "name": "Garu",
+          "level": 4,
+          "element": "Vento",
+          "initial": true
+        },
+        {
+          "name": "Sukukaja",
+          "level": 4,
+          "element": "Suporte",
+          "initial": true
+        },
+        {
+          "name": "Single Shot",
+          "level": 5,
+          "element": "Perfuração",
+          "initial": false
+        },
+        {
+          "name": "Patra",
+          "level": 6,
+          "element": "Cura",
+          "initial": false
+        },
+        {
+          "name": "Resist Charm",
+          "level": 8,
+          "element": "Passiva",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Eletricidade",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Luz",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Trevas",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": [
+        "Vento",
+        "Suporte"
+      ]
+    }
+  },
+  "p4g": {
+    "pixie": {
+      "name": "Pixie",
+      "level": 2,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Dia",
+          "level": 2,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Patra",
+          "level": 2,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Zio",
+          "level": 3,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Me Patra",
+          "level": 4,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Trafuri",
+          "level": 8,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Vento",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Luz",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Trevas",
+          "affinity": "Resiste"
+        }
+      ],
+      "coverage": []
+    },
+    "jack-frost": {
+      "name": "Jack Frost",
+      "level": 16,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Mabufu",
+          "level": 16,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Ice Break",
+          "level": 16,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Me Patra",
+          "level": 16,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Ice Boost",
+          "level": 18,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Bufula",
+          "level": 19,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Dodge Fire",
+          "level": 20,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Mind Charge",
+          "level": 25,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Anula"
+        },
+        {
+          "element": "Luz",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Trevas",
+          "affinity": "Resiste"
+        }
+      ],
+      "coverage": []
+    },
+    "jack-o-lantern": {
+      "name": "Pyro Jack",
+      "level": 32,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Agilao",
+          "level": 32,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Tarunda",
+          "level": 32,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Marakukaja",
+          "level": 34,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Maragion",
+          "level": 36,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Auto-Rakukaja",
+          "level": 37,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Resist Ice",
+          "level": 38,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Drena"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Luz",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Trevas",
+          "affinity": "Resiste"
+        }
+      ],
+      "coverage": []
+    },
+    "angel": {
+      "name": "Angel",
+      "level": 4,
+      "arcana": "Justice",
+      "skills": [
+        {
+          "name": "Garu",
+          "level": 4,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Patra",
+          "level": 4,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Hama",
+          "level": 5,
+          "element": "Luz",
+          "initial": false
+        },
+        {
+          "name": "Sukukaja",
+          "level": 6,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Regenerate 1",
+          "level": 8,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Hama Boost",
+          "level": 9,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Vento",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Luz",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Trevas",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": []
+    }
+  },
+  "p5r": {
+    "pixie": {
+      "name": "Pixie",
+      "level": 2,
+      "arcana": "Lovers",
+      "skills": [
+        {
+          "name": "Zio",
+          "level": 2,
+          "element": "Eletricidade",
+          "initial": true
+        },
+        {
+          "name": "Dia",
+          "level": 2,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Patra",
+          "level": 3,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Tarukaja",
+          "level": 4,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Resist Confuse",
+          "level": 5,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Tiro",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Eletricidade",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "ble",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "Maldição",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": [
+        "Eletricidade"
+      ]
+    },
+    "jack-frost": {
+      "name": "Jack Frost",
+      "level": 11,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Bufu",
+          "level": 11,
+          "element": "Gelo",
+          "initial": true
+        },
+        {
+          "name": "Ice Break",
+          "level": 11,
+          "element": "Suporte",
+          "initial": true
+        },
+        {
+          "name": "Baisudi",
+          "level": 11,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Mabufu",
+          "level": 12,
+          "element": "Gelo",
+          "initial": false
+        },
+        {
+          "name": "Rakunda",
+          "level": 13,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Freeze Boost",
+          "level": 15,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Anula"
+        }
+      ],
+      "coverage": [
+        "Gelo",
+        "Suporte"
+      ]
+    },
+    "jack-o-lantern": {
+      "name": "Jack-o'-Lantern",
+      "level": 2,
+      "arcana": "Magician",
+      "skills": [
+        {
+          "name": "Agi",
+          "level": 2,
+          "element": "Fogo",
+          "initial": true
+        },
+        {
+          "name": "Rakunda",
+          "level": 2,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Sharp Student",
+          "level": 4,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Dazzler",
+          "level": 5,
+          "element": "Estado",
+          "initial": false
+        },
+        {
+          "name": "Resist Sleep",
+          "level": 7,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Fogo",
+          "affinity": "Drena"
+        },
+        {
+          "element": "Gelo",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Vento",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": [
+        "Fogo"
+      ]
+    },
+    "angel": {
+      "name": "Angel",
+      "level": 9,
+      "arcana": "Justice",
+      "skills": [
+        {
+          "name": "Kouha",
+          "level": 9,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Makajam",
+          "level": 9,
+          "element": "Estado",
+          "initial": true
+        },
+        {
+          "name": "Dia",
+          "level": 9,
+          "element": "",
+          "initial": true
+        },
+        {
+          "name": "Baisudi",
+          "level": 10,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Dodge Curse",
+          "level": 11,
+          "element": "",
+          "initial": false
+        },
+        {
+          "name": "Dekunda",
+          "level": 12,
+          "element": "",
+          "initial": false
+        }
+      ],
+      "affinities": [
+        {
+          "element": "Tiro",
+          "affinity": "Fraco"
+        },
+        {
+          "element": "Eletricidade",
+          "affinity": "Resiste"
+        },
+        {
+          "element": "ble",
+          "affinity": "Anula"
+        },
+        {
+          "element": "Maldição",
+          "affinity": "Fraco"
+        }
+      ],
+      "coverage": [
+        "Estado"
+      ]
+    }
+  }
+}
