@@ -37,7 +37,7 @@ export type TrainingPage =
 export function Art({ id }: { id: string }) {
   return (
     <img
-      src={`/personas/${id}.webp`}
+      src={`${import.meta.env.BASE_URL}personas/${id}.webp`}
       alt={id.replaceAll("-", " ")}
       className="training-art"
       draggable={false}

@@ -60,7 +60,7 @@ function Art({ id, className = "" }: { id: string; className?: string }) {
   return (
     <img
       className={`persona-art ${className}`}
-      src={`/personas/${id}.webp`}
+      src={`${import.meta.env.BASE_URL}personas/${id}.webp`}
       alt={`Arte de ${id.replaceAll("-", " ")}`}
       draggable={false}
     />
@@ -359,7 +359,7 @@ export default function App() {
             </span>
             <span>
               Projeto de fã · Artes © ATLUS / SEGA ·{" "}
-              <a href="/ART-CREDITS.md" target="_blank" rel="noreferrer">
+              <a href={`${import.meta.env.BASE_URL}ART-CREDITS.md`} target="_blank" rel="noreferrer">
                 Créditos e fontes ↗
               </a>
             </span>

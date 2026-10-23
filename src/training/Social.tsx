@@ -185,7 +185,7 @@ export function SocialTrainer({
               }
             }}
           >
-            <img src={`/characters/${char.image}.png`} alt={char.name} />
+            <img src={`${import.meta.env.BASE_URL}characters/${char.image}.png`} alt={char.name} />
             <span>
               {char.name}
               <small>
@@ -258,7 +258,7 @@ export function SocialTrainer({
               <img
                 key={correct ? "happy" : "neutral"}
                 className="social-portrait"
-                src={`/characters/${correct ? c.happy : c.image}.png`}
+                src={`${import.meta.env.BASE_URL}characters/${correct ? c.happy : c.image}.png`}
                 alt={`${c.name} — retrato ilustrativo`}
               />
               <div className="social-label">

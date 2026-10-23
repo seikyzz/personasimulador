@@ -52,3 +52,11 @@ Não foram incluídos spoilers de enredo, chefes ou eventos de vínculos. Artes,
 ## Código recebido
 
 Os componentes e dados antigos foram preservados em `reference/original-src/`, fora da aplicação e da checagem TypeScript. O ZIP recebido referenciava módulos de exportação/configuração que não estavam no arquivo. A nova aplicação é local e não depende dessas integrações. O conflito original entre Vite 8 e esbuild 0.25 foi corrigido com uma versão compatível e um lockfile.
+
+## Publicação no GitHub Pages
+
+O workflow `.github/workflows/pages.yml` testa, compila e publica a branch `main` no GitHub Pages. O endereço esperado é https://seikyzz.github.io/personasimulador/. O workflow tenta habilitar o Pages; se a conta não permitir essa ativação automática, abra **Settings → Pages → Build and deployment → Source → GitHub Actions** e execute novamente o workflow **Publish GitHub Pages**, na aba Actions.
+
+No plano GitHub Free, o Pages exige um repositório público; repositórios privados precisam de um plano compatível. A configuração não altera a visibilidade do repositório.
+
+Para validar o caminho usado pelo Pages localmente: `npm run build -- --base=/personasimulador/`. A publicação pela Vercel continua usando o build padrão na raiz.
