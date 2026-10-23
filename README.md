@@ -24,21 +24,30 @@ npm run test:e2e
 
 Os testes de navegador usam Chromium em `/usr/bin/chromium`. Em outra máquina, informe `CHROMIUM_PATH` com o caminho de um Chromium instalado. Testes incluem fraquezas, resistência, custos, fim da batalha, temas, artes, salvamento, rotina e layout móvel.
 
-## Incluído
+## Trilha de aprendizado v2
 
-- Interface responsiva com fundos animados diferentes por jogo, animação opcional e respeito a reduced-motion.
-- Combate de treino com dois alvos fictícios, análise de afinidade, magia, cura, defesa, 1 More, All-Out Attack, HP/SP e histórico.
-- Laboratório de função e herança: avalia prioridades de uma seleção, explica perdas e registro de materiais.
-- Fichas iniciais de quatro Personas com artes originais locais, habilidades, nível e afinidades por edição (P3R/P4G/P5R); grupo de estudo limitado a três.
-- Planejador de um dia fictício: prazo, recursos, clima, disponibilidade e explicação do custo de oportunidade.
-- Biblioteca de conceitos com progresso local, diferenças de edição e sem informações de enredo.
-- P2 tem exercícios conceituais separados de ordem de ações, preparação e invocação por cartas.
+Comece em **Começar do zero**. Cada etapa apresenta objetivo, regra curta, decisões e revisão de erros. O formato 20/80 representa uma explicação para quatro decisões, não uma medição de tempo. Aprovação depende de evidência, não de marcar um texto como lido.
+
+- Quatro identidades de interface: recortes/contraste em Royal, diagonais/ciano e navegação à direita em Reload, molduras de TV/fundo amarelo em Golden, janelas clássicas em Persona 2.
+- Quatro encontros táticos progressivos por jogo moderno, com adversários ilustrados, afinidades por edição, intenção de ataque, HP/SP, troca de Persona, cura, defesa, suporte, sono, 1 More e All-Out Attack. Royal tem transferência com bônus didático e Technical; Reload tem Shift sem esse bônus; Golden não tem transferência.
+- Prova avançada exige vitória em até oito rodadas, HP mínimo, fraqueza, defesa e debuff. Os testes executam estratégias que demonstram que os critérios são alcançáveis nas três edições.
+- Quatro decisões comentadas em cada prova de equipe, fusão, rotina e Confidants. São necessários três acertos iniciais; errar exige corrigir e depois revisar. Progresso salvo separadamente por edição.
+- Conversas de treino com retratos de Chie/Yukiko (Golden) e Aigis (laboratório de Reload com retrato clássico identificado). As cenas são originais, sem falas do jogo, e não simulam os ranks/pontos reais dos personagens. Royal tem uma prova de decisões de Confidants sem retrato específico.
+- Fichas de quatro Personas com habilidades, nível e afinidades de P3R/P4G/P5R; comparação de equipe e exercícios livres de herança/rotina.
+- Persona 2 tem provas conceituais próprias de compatibilidade, contatos, cartas e sequência. Não usa 1 More ou Social Links.
+- Fontes consultadas, créditos das artes e buscas externas claramente identificadas. Fontes e artes carregam localmente.
 
 ## Limites explícitos
 
-Não é uma emulação completa dos jogos. Valores de dano/HP/SP são didáticos. Baton Pass, Shift, Technical, Theurgy, negociação e Shuffle Time são explicados, mas não reproduzidos no motor de combate. A fusão não calcula receitas ou heranças legais; um link de consulta externa por edição fica identificado. P2 não implementa receitas de Fusion Spells nem diferenças completas entre IS e EP. O calendário não reproduz eventos, datas ou todos os custos de atividades. Não há spoilers de história, chefes ou locais; as fichas exibem nomes e artes de algumas Personas.
+O motor é didático e determinístico, não uma emulação completa. Dano, custo, duração, precisão e HP são normalizados; os kits de treino não são uma ficha de habilidades naturais. O guia dentro da arena descreve os detalhes: grupo simplificado, sono garantido, Technical em condição específica e efeito coletivo didático de Tarunda. Theurgy, críticos aleatórios, itens, negociação e Shuffle Time não estão implementados.
 
-O acervo completo de habilidades/Personas não está incluído. As fichas são um conjunto inicial verificável, com as fontes em `public/ART-CREDITS.md`. As artes podem representar uma edição visual diferente da selecionada. Marcas e artes pertencem à ATLUS/SEGA; não são artes geradas.
+Não há calculadora completa de fusão/herança legal, calendário de história, simulador completo de batalhas de IS/EP nem catálogo de todos os inimigos. Os cenários são ilustrações em CSS inspiradas na direção visual dos jogos, não capturas de masmorras. As imagens dos adversários são modelos de Personas: não indicam a forma ou ocorrência de Shadows numa área real.
+
+Não foram incluídos spoilers de enredo, chefes ou eventos de vínculos. Artes, nomes e Arcanas das figuras selecionadas são visíveis. Links externos podem conter spoilers. YouTube e Reddit são buscas complementares não auditadas; não foram apresentados como vídeos assistidos ou discussões revisadas.
+
+## Estrutura e verificação
+
+`src/training/engine.ts` contém as regras determinísticas. `Training.tsx`, `Social.tsx` e `curriculum.ts` implementam a trilha e seus exercícios. `training.css` contém as quatro identidades visuais. `tests/training-engine.test.ts` verifica regras e estratégias; os testes de navegador verificam fluxo, pontuação, persistência, retratos, temas e telas de 320/390/1440 px. `tests/find-strategy.ts` é uma ferramenta de desenvolvimento para encontrar caminhos de vitória, fora da suíte padrão.
 
 ## Código recebido
 
