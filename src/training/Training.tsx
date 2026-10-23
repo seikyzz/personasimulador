@@ -829,10 +829,7 @@ export function SourceLibrary() {
         <span className="chapter-label">DADOS, CONTEXTO E VERIFICAÇÃO</span>
         <h1>Aprender também é conferir.</h1>
         <p>
-          Fontes consultadas estão separadas de buscas complementares. Acesso a
-          páginas oficiais e a alguns serviços externos foi bloqueado neste
-          ambiente; nenhum vídeo ou discussão é apresentado como revisado sem
-          ter sido consultado.
+          As fichas e receitas da jornada usam a base por edição de aqiu384. O manual do modo livre também lista as fontes de dificuldade e os limites do motor. Buscas de vídeos e discussões são material complementar, não conteúdo auditado.
         </p>
       </div>
       <div className="source-grid">

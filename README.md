@@ -1,17 +1,40 @@
 # Velvet Academy
 
-Laboratório de estudo de Persona em português, sem roteiro de história. React + TypeScript + Vite. Temas próprios para Persona 5 Royal, Persona 3 Reload, Persona 4 Golden e Persona 2 (IS/EP).
+Academia de Persona em português, em React + TypeScript + Vite. Mantém quatro temas para **Persona 5 Royal**, **Persona 3 Reload**, **Persona 4 Golden** e **Persona 2 IS/EP**, sem cenas ou chefes da história.
 
 ## Executar
 
-Use Node.js 22.12+ (validado com Node 24) e npm.
+Node.js 22.12+ e npm:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-A aplicação usa a porta 3000. Não precisa de conta, chave de API, Firebase ou servidor de banco de dados. Artes e fontes são servidas localmente. Equipe, jogo selecionado, opção de movimento e conceitos estudados ficam no localStorage do navegador. O progresso é separado por jogo; não há sincronização entre dispositivos.
+Abra http://localhost:3000. Não precisa de conta, API ou banco de dados. Artes e fontes são locais. A reserva, companheiros, objetivo e histórico usam `localStorage`, separados por edição. Não há sincronização entre dispositivos.
+
+## Jornada conectada
+
+1. **Minha equipe:** catálogo ilustrado com busca/filtros, habilidades iniciais/futuras, afinidades, reserva do protagonista e três companheiros selecionáveis por edição. São 53 fichas em Royal, 64 em Reload e 48 em Golden, até nível base 35.
+2. **Velvet Room:** escolha dois materiais da reserva e veja imagem, nível, Arcana e habilidades do resultado. Compare cobertura antes/depois, escolha uma herança compatível e confirme. Os materiais são registrados e consumidos; o resultado entra na mesma reserva usada na equipe e na batalha.
+3. **Modo livre:** configure 1–3 adversários, dificuldade e formação solo/grupo. Dê comandos individuais, cure um aliado, proteja o grupo, explore fraquezas e transfira 1 More em Royal/Reload. Use o histórico para revisar causas. A reserva é fotografada no início de cada encontro.
+4. **Planejador:** cenário de até três dias com prazo, recursos, exploração, atributo e afinidade. Cada escolha pede uma intenção e apresenta consequência/custo de oportunidade. Os registros entram no histórico compartilhado.
+5. **Oficina de vínculos:** seis casos com escolha e justificativa, alternativas plausíveis, diagnóstico e revisão. O critério de domínio exige cinco casos integralmente corretos; não se ganha aprovação só clicando até acertar.
+
+O curso guiado de combate conserva os quatro encontros anteriores, com **kit emprestado**, para que o aprendizado básico não dependa de uma reserva previamente montada. A oficina de equipe/fusão e a prova de planejamento ficam como exercícios complementares. Persona 2 mantém seus exercícios conceituais próprios, sem fusão dupla moderna, calendário escolar, Social Links ou 1 More.
+
+## Dados e limites
+
+- Catálogo e receitas derivados de [aqiu384/megaten-fusion-tool](https://github.com/aqiu384/megaten-fusion-tool), domínio público. Commit e recorte em `src/academy/DATA-SOURCES.md`.
+- `scripts/import-personas.py DATA_REPO ART_DIRECTORY` regenera o catálogo e as receitas ilustradas. Calcula usando a tabela completa de candidatos, depois restringe resultados ao recorte; não troca um resultado ausente por outro disponível.
+- Fusão normal dupla, níveis base, sem DLC, especiais, Treasure Demons ou acidentes. Resultado fora do recorte é identificado. Herança limita-se a **uma** habilidade conhecida e compatível por fusão; é um limite pedagógico, não a contagem de vagas dos jogos. Bônus de experiência, Traits e evolução de nível não são simulados.
+- Capacidade de 12 e recuperação gratuita são escolhas do laboratório. Não representam dinheiro, aquisição ou progressão de capacidade da partida.
+- Companheiros usam kits de função e atributos normalizados, não suas fichas naturais de um nível específico. O modo livre executa um subconjunto das habilidades visíveis no compêndio. Ataques elementais simples, cura e suporte têm custos e potência de treino; Media funciona como cura individual neste recorte.
+- Dificuldade usa parâmetros por edição, documentados no manual da arena. Para Royal foi adotada a tabela japonesa (Merciless: dano 0,64; fraqueza 1,25 × 3), que diverge de números arredondados de outros guias. Reload e Golden têm tabelas próprias. HP base não aumenta ao trocar dificuldade.
+- A batalha não emula a fórmula completa de atributos/níveis, IA, precisão, críticos, Technical no modo livre, Theurgy, itens, recompensas ou efeitos sociais. Inimigos respondem ao fim da rodada aliada, não recebem 1 More e gastam a ação ao levantar; drenar/repelir na defesa do jogador anulam dano. O guia explica essas diferenças.
+- Planejamento e encontros são cenários novos. Seus contadores e limiares não representam datas, pontos ou ranks reais de personagens. A identidade visual é inspirada nos jogos, não uma réplica da interface oficial.
+
+Artes © ATLUS / SEGA. Origens e limites em `public/ART-CREDITS.md`. Links externos podem conter spoilers.
 
 ## Verificar
 
@@ -22,41 +45,12 @@ npm run build
 npm run test:e2e
 ```
 
-Os testes de navegador usam Chromium em `/usr/bin/chromium`. Em outra máquina, informe `CHROMIUM_PATH` com o caminho de um Chromium instalado. Testes incluem fraquezas, resistência, custos, fim da batalha, temas, artes, salvamento, rotina e layout móvel.
+Playwright usa `CHROMIUM_PATH` quando informado; caso contrário usa `/usr/bin/chromium` se disponível ou o Chromium instalado pelo Playwright. Exemplo: `CHROMIUM_PATH=/caminho/para/chrome npm run test:e2e`.
 
-## Trilha de aprendizado v2
+Testes verificam contratos de fusão/herança, catálogo e artes, persistência por edição, turnos individuais, restrições de comandos, dificuldade, curso guiado, oficina de vínculos, consequências do planejamento e layout em 320/390/1440 px.
 
-Comece em **Começar do zero**. Cada etapa apresenta objetivo, regra curta, decisões e revisão de erros. O formato 20/80 representa uma explicação para quatro decisões, não uma medição de tempo. Aprovação depende de evidência, não de marcar um texto como lido.
+## Publicação
 
-- Quatro identidades de interface: recortes/contraste em Royal, diagonais/ciano e navegação à direita em Reload, molduras de TV/fundo amarelo em Golden, janelas clássicas em Persona 2.
-- Quatro encontros táticos progressivos por jogo moderno, com adversários ilustrados, afinidades por edição, intenção de ataque, HP/SP, troca de Persona, cura, defesa, suporte, sono, 1 More e All-Out Attack. Royal tem transferência com bônus didático e Technical; Reload tem Shift sem esse bônus; Golden não tem transferência.
-- Prova avançada exige vitória em até oito rodadas, HP mínimo, fraqueza, defesa e debuff. Os testes executam estratégias que demonstram que os critérios são alcançáveis nas três edições.
-- Quatro decisões comentadas em cada prova de equipe, fusão, rotina e Confidants. São necessários três acertos iniciais; errar exige corrigir e depois revisar. Progresso salvo separadamente por edição.
-- Conversas de treino com retratos de Chie/Yukiko (Golden) e Aigis (laboratório de Reload com retrato clássico identificado). As cenas são originais, sem falas do jogo, e não simulam os ranks/pontos reais dos personagens. Royal tem uma prova de decisões de Confidants sem retrato específico.
-- Fichas de quatro Personas com habilidades, nível e afinidades de P3R/P4G/P5R; comparação de equipe e exercícios livres de herança/rotina.
-- Persona 2 tem provas conceituais próprias de compatibilidade, contatos, cartas e sequência. Não usa 1 More ou Social Links.
-- Fontes consultadas, créditos das artes e buscas externas claramente identificadas. Fontes e artes carregam localmente.
+`.github/workflows/pages.yml` testa e publica pushes na branch `main` no GitHub Pages. Endereço esperado: https://seikyzz.github.io/personasimulador/. Build do Pages: `npm run build -- --base=/personasimulador/`. O build padrão funciona na raiz de outros hosts.
 
-## Limites explícitos
-
-O motor é didático e determinístico, não uma emulação completa. Dano, custo, duração, precisão e HP são normalizados; os kits de treino não são uma ficha de habilidades naturais. O guia dentro da arena descreve os detalhes: grupo simplificado, sono garantido, Technical em condição específica e efeito coletivo didático de Tarunda. Theurgy, críticos aleatórios, itens, negociação e Shuffle Time não estão implementados.
-
-Não há calculadora completa de fusão/herança legal, calendário de história, simulador completo de batalhas de IS/EP nem catálogo de todos os inimigos. Os cenários são ilustrações em CSS inspiradas na direção visual dos jogos, não capturas de masmorras. As imagens dos adversários são modelos de Personas: não indicam a forma ou ocorrência de Shadows numa área real.
-
-Não foram incluídos spoilers de enredo, chefes ou eventos de vínculos. Artes, nomes e Arcanas das figuras selecionadas são visíveis. Links externos podem conter spoilers. YouTube e Reddit são buscas complementares não auditadas; não foram apresentados como vídeos assistidos ou discussões revisadas.
-
-## Estrutura e verificação
-
-`src/training/engine.ts` contém as regras determinísticas. `Training.tsx`, `Social.tsx` e `curriculum.ts` implementam a trilha e seus exercícios. `training.css` contém as quatro identidades visuais. `tests/training-engine.test.ts` verifica regras e estratégias; os testes de navegador verificam fluxo, pontuação, persistência, retratos, temas e telas de 320/390/1440 px. `tests/find-strategy.ts` é uma ferramenta de desenvolvimento para encontrar caminhos de vitória, fora da suíte padrão.
-
-## Código recebido
-
-Os componentes e dados antigos foram preservados em `reference/original-src/`, fora da aplicação e da checagem TypeScript. O ZIP recebido referenciava módulos de exportação/configuração que não estavam no arquivo. A nova aplicação é local e não depende dessas integrações. O conflito original entre Vite 8 e esbuild 0.25 foi corrigido com uma versão compatível e um lockfile.
-
-## Publicação no GitHub Pages
-
-O workflow `.github/workflows/pages.yml` testa, compila e publica a branch `main` no GitHub Pages. O endereço esperado é https://seikyzz.github.io/personasimulador/. O workflow tenta habilitar o Pages; se a conta não permitir essa ativação automática, abra **Settings → Pages → Build and deployment → Source → GitHub Actions** e execute novamente o workflow **Publish GitHub Pages**, na aba Actions.
-
-No plano GitHub Free, o Pages exige um repositório público; repositórios privados precisam de um plano compatível. A configuração não altera a visibilidade do repositório.
-
-Para validar o caminho usado pelo Pages localmente: `npm run build -- --base=/personasimulador/`. A publicação pela Vercel continua usando o build padrão na raiz.
+Nenhuma publicação é necessária para testar localmente. O código original de uma versão anterior permanece em `reference/original-src/`, fora da aplicação e do TypeScript.

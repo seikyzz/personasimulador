@@ -30,6 +30,13 @@ import {
 } from "./training/Training";
 import { SocialTrainer } from "./training/Social";
 
+import {EditionJourney} from "./academy/journey";
+import {Reserve, Velvet} from "./academy/Velvet";
+import {BattleHub} from "./academy/BattleHub";
+import {DayPlanner} from "./academy/Planning";
+import {SocialWorkshop} from "./academy/SocialWorkshop";
+import "./academy/journey.css";
+
 type Page =
   | "home"
   | "battle"
@@ -228,7 +235,7 @@ export default function App() {
               ))}
             </div>
           </div>
-          <div key={game + page} className="page-enter">
+          <EditionJourney game={game}><div key={game + page} className="page-enter">
             {page === "home" && (
               <Trail
                 game={game}
@@ -239,53 +246,12 @@ export default function App() {
               />
             )}
             {page === "battle" && (
-              <CombatTrainer game={game} onMaster={() => mark("battle")} />
+              <BattleHub game={game} onMaster={() => mark("battle")} onTeam={() => go("team")} />
             )}
-            {page === "fusion" && (
-              <>
-                <PracticalLab
-                  lab="fusion"
-                  game={game}
-                  onMaster={() => mark("fusion")}
-                />
-                <details className="extra-lab">
-                  <summary>
-                    Exploração livre: comparar prioridades de herança
-                  </summary>
-                  <FusionModule game={game} />
-                </details>
-              </>
-            )}
-            {page === "team" && (
-              <>
-                <PracticalLab
-                  lab="team"
-                  game={game}
-                  onMaster={() => mark("team")}
-                />
-                <TeamModule game={game} />
-              </>
-            )}
-            {page === "calendar" && (
-              <>
-                <PracticalLab
-                  lab="calendar"
-                  game={game}
-                  onMaster={() => mark("calendar")}
-                />
-                <details className="extra-lab">
-                  <summary>Exploração livre: mudar as condições do dia</summary>
-                  <CalendarModule game={game} />
-                </details>
-              </>
-            )}
-            {page === "social" && (
-              <SocialTrainer
-                game={game}
-                onEdition={setGame}
-                onMaster={() => mark("social")}
-              />
-            )}
+            {page === "fusion" && (game === "p2" ? <FusionModule game={game}/> : <><Velvet onTeam={() => go("team")}/><details className="extra-lab"><summary>Exercício complementar de herança</summary><PracticalLab lab="fusion" game={game} onMaster={() => mark("fusion")}/></details></>)}
+            {page === "team" && (game === "p2" ? <TeamModule game={game}/> : <><Reserve onFusion={() => go("fusion")}/><details className="extra-lab"><summary>Exercício complementar de cobertura</summary><PracticalLab lab="team" game={game} onMaster={() => mark("team")}/></details></>)}
+            {page === "calendar" && (game === "p2" ? <CalendarModule game={game}/> : <><DayPlanner onTeam={() => go("team")} onSocial={() => go("social")}/><details className="extra-lab"><summary>Prova de planejamento</summary><PracticalLab lab="calendar" game={game} onMaster={() => mark("calendar")}/></details></>)}
+            {page === "social" && (game === "p2" ? <SocialTrainer game={game} onEdition={setGame} onMaster={() => mark("social")}/> : <SocialWorkshop onMaster={() => mark("social")} onCalendar={() => go("calendar")} onFusion={() => go("fusion")}/>)}
             {page === "sources" && <SourceLibrary />}
             {page === "learn" && (
               <>
@@ -352,6 +318,7 @@ export default function App() {
               </>
             )}
           </div>
+          </EditionJourney>
           <footer>
             <span>
               VELVET ACADEMY <span className="footer-cross">✦</span> APRENDER
