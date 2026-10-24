@@ -1,3 +1,4 @@
+import { chapters, type Decision } from "../academy/learning";
 import type { Game } from "../academy/content";
 export type Answer = { text: string; why: string; correct?: boolean };
 export type Question = { title: string; situation: string; answers: Answer[] };
@@ -26,89 +27,31 @@ const a = (text: string, why: string, correct = false): Answer => ({
   correct,
 });
 export function questions(lab: Lab, game: Game): Question[] {
-  if (lab === "social" && game === "p5r")
-    return [
-      {
-        title: "Escolha pelo problema que precisa resolver",
-        situation:
-          "Você tem duas oportunidades de encontro. Um próximo benefício facilita sua rotina; o outro ajuda numa atividade que você quase não usa. Não há urgência de calendário.",
-        answers: [
-          a(
-            "Escolher apenas o rank mais alto",
-            "O rank sozinho não diz qual benefício atende sua situação.",
-          ),
-          a(
-            "Comparar o benefício próximo com o que está limitando sua partida",
-            "Você está avaliando utilidade, disponibilidade e custo de oportunidade.",
-            true,
-          ),
-          a(
-            "Ignorar os benefícios: todo Confidant faz a mesma coisa",
-            "Royal dá benefícios próprios a diferentes Confidants; eles não são equivalentes.",
-          ),
-        ],
-      },
-      {
-        title: "Afinidade não é avanço automático",
-        situation:
-          "Você leva uma Persona da Arcana correspondente, mas o jogo indica que o vínculo não vai aprofundar ainda.",
-        answers: [
-          a(
-            "Ler os requisitos e avaliar se vale preparar afinidade",
-            "A Arcana pode ajudar nos pontos relevantes; não elimina todas as condições para avançar.",
-            true,
-          ),
-          a(
-            "Confirmar porque a Arcana garante rank",
-            "O bônus não garante automaticamente um avanço.",
-          ),
-          a(
-            "Concluir que a Persona foi equipada errado",
-            "A existência de um bônus não implica que o limiar ou requisito já foi atendido.",
-          ),
-        ],
-      },
-      {
-        title: "Um encontro bloqueado",
-        situation:
-          "A opção disponível informa um requisito de atributo social que você ainda não alcançou.",
-        answers: [
-          a(
-            "Aumentar o nível do protagonista no combate",
-            "Nível de combate não é atributo social.",
-          ),
-          a(
-            "Gastar encontros sem olhar o bloqueio",
-            "Pontos de afinidade podem não resolver esse requisito.",
-          ),
-          a(
-            "Preparar o atributo exigido com uma atividade adequada",
-            "Você usa a informação do jogo para criar uma prioridade concreta.",
-            true,
-          ),
-        ],
-      },
-      {
-        title: "Aproveitar um benefício",
-        situation:
-          "Você desbloqueou uma habilidade de Confidant, mas continua seguindo uma rotina antiga que não a utiliza.",
-        answers: [
-          a(
-            "Não mudar nada: um benefício sempre se aplica sozinho",
-            "Alguns benefícios exigem uso ou mudam suas opções; leia suas condições.",
-          ),
-          a(
-            "Rever o planejamento à luz do efeito e das condições",
-            "Aprender o sistema inclui atualizar a estratégia quando suas possibilidades mudam.",
-            true,
-          ),
-          a(
-            "Procurar uma agenda universal e obedecer",
-            "Uma agenda fixa pode ignorar seus recursos, objetivos e benefícios atuais.",
-          ),
-        ],
-      },
-    ];
+  if (game !== "p2" && lab !== "classic") {
+    const course = chapters(game);
+    const id = {team:"reserve",fusion:"fusion",calendar:"day",social:"social"}[lab];
+    const chapter = course.find(c => c.id === id)!;
+    const extra: Record<string, Decision[]> = {
+      team: [
+        {prompt:"Um aliado já cobre vento, mas tem pouco SP. O próximo trecho contém vários alvos fracos a vento. Qual redundância tem função clara?",options:["Outra fonte de vento com recurso disponível.","Um terceiro ataque do elemento já abundante.","Uma habilidade cara que ninguém consegue pagar."],correct:0,feedback:["Redundância pode ser reserva de recursos; não é sempre desperdício.","Pode ajudar em outro trecho, mas não sustenta a resposta observada aqui.","Cobertura na ficha sem recurso disponível não é uma ação utilizável."]},
+        {prompt:"A luta é longa e o alvo causa muito dano, sem fraqueza conhecida. Você já tem ataque e cura. Qual função vale testar?",options:["Outro ataque igual para o mesmo personagem.","Redução de ataque ou proteção bem aplicada.","Troca para maior nível sem ler habilidades."],correct:1,feedback:["Não cria uma função nova nem reduz a pressão por si só.","Suporte pode reduzir o gasto de cura. Confira alvo, duração e a ação necessária para mantê-lo.","Nível sem função e defesa não explica como sobreviver melhor."]}
+      ],
+      fusion: [
+        {prompt:"Você já tem cura em dois integrantes, mas falta vento. O resultado aceita Dia ou Garu e não começa com nenhum dos dois. Qual herança atende à lacuna?",options:["Dia, para repetir a recomendação anterior.","Nenhuma, para liberar todos os espaços.","Garu, para criar uma resposta de vento."],correct:2,feedback:["Cura é valiosa, mas o contexto já mudou: há duas fontes.","Deixar espaço não fornece a resposta ausente.","Escolha pelo problema atual. Herança de cura não é uma regra universal."]},
+        {prompt:"Você registrou um material antes de fundir. Depois quer usá-lo de novo. Qual passo ainda precisa considerar?",options:["Invocação pelo compêndio e seu custo.","Retorno automático ao terminar a luta.","Troca da Persona equipada para desfazer fusão."],correct:0,feedback:["Registro preserva uma possibilidade de recuperação; não mantém o material carregado nem elimina o custo.","A fusão consumiu o material. Registro não é retorno automático.","Trocar a equipada não desfaz uma fusão confirmada."]}
+      ],
+      calendar: [
+        {prompt:"Hoje há bônus de estudo, mas o atributo já atende seu objetivo. Um vínculo raro também está pronto para avançar; não há urgência de exploração. Qual comparação é mais útil?",options:["Quantidade de bônus, sem olhar requisitos.","Valor do próximo avanço e raridade da ocasião.","Nível de combate de quem aparece no mapa."],correct:1,feedback:["Bônus não é objetivo por si só; compare o que ele libera.","Você considera utilidade e oportunidade. Estudar continua possível, mas precisa de uma razão.","Nível de combate não mede o valor desse período social."]},
+        {prompt:"O calendário do cenário ainda tem espaço, mas faltam recursos para a incursão. Prepará-los custa um período aqui. O que precisa caber no plano?",options:["Só os horários de exploração.","Só a atividade de preparação.","Preparação antes da incursão e ambos os horários."],correct:2,feedback:["Um horário reservado sem recurso não permite executar o plano.","Recursos prontos não concluem a exploração sozinhos.","Você planeja uma dependência: primeiro viabilizar, depois executar."]}
+      ],
+      social: [
+        {prompt:"Um Confidant oferece um benefício que reduz seu problema recorrente de recursos; outro melhora uma atividade que você não utiliza. Ambos estão disponíveis, sem prazo. O que comparar?",options:["Benefício próximo e uso real na sua rotina.","Rank mais alto sem conferir o próximo efeito.","Nível da Persona da Arcana correspondente."],correct:0,feedback:["O efeito que você consegue usar agora tem valor concreto; confira condições e custo de avançar.","O número do rank não explica a utilidade do benefício.","Nível da Persona não define o serviço do Confidant."]},
+        {prompt:"Você levou a Arcana correspondente e ganhou pontos, mas não avançou. Qual verificação evita gastar outro período pelo motivo errado?",options:["Trocar por outra Persona de nível maior.","Ler o aviso de avanço e os requisitos restantes.","Confirmar de novo sem consultar as condições."],correct:1,feedback:["O bônus depende da correspondência quando aplicável, não desse aumento de nível.","Pontos, acesso e rank são diferentes. O aviso orienta o próximo passo.","Repetir pode ajudar afinidade, mas não resolve qualquer tipo de bloqueio."]}
+      ]
+    };
+    return [...chapter.decisions, ...extra[lab]].map((d,i)=>({title:`Aplicação ${i+1} · ${chapter.goal}`,situation:d.prompt,answers:d.options.map((text,n)=>({text,why:d.feedback[n],correct:n===d.correct}))}));
+  }
+
   if (game === "p2" || lab === "classic")
     return [
       {
@@ -189,260 +132,22 @@ export function questions(lab: Lab, game: Game): Question[] {
         ],
       },
     ];
-  if (lab === "team")
-    return [
-      {
-        title: "Diagnóstico da próxima incursão",
-        situation:
-          "Em três encontros você observou: um alvo fraco a fogo, um que anula gelo e outro sem fraqueza conhecida. O cenário tem aparência azul. O que preparar?",
-        answers: [
-          a(
-            "Somente fogo: azul significa gelo",
-            "A aparência da área não define a afinidade de todos os inimigos.",
-          ),
-          a(
-            "Fogo, análise e uma alternativa de dano/suporte",
-            "Você usa evidência dos encontros, mantém cobertura e não depende de uma fraqueza presumida.",
-            true,
-          ),
-          a(
-            "Somente gelo para combinar com o cenário",
-            "O alvo que anula gelo desperdiçaria seu SP. A masmorra não é um tipo único.",
-          ),
-        ],
-      },
-      {
-        title: "O custo invisível da troca",
-        situation:
-          "Sua Persona de fogo derruba o alvo. Mas o inimigo restante vai usar gelo, ao qual ela é fraca. Seu HP está baixo e não há ação extra.",
-        answers: [
-          a(
-            "Ignorar a defesa e escolher só pelo maior dano",
-            "Trocar de Persona altera sua defesa. O próximo ataque pode encerrar a luta.",
-          ),
-          a(
-            "Reavaliar a Persona equipada, cura e defesa",
-            "Considere sobreviver à resposta. Uma alternativa com resistência adequada pode valer mais que dano imediato.",
-            true,
-          ),
-          a(
-            "Trocar sem conferir a afinidade",
-            "Uma troca sem análise pode manter ou piorar a mesma vulnerabilidade.",
-          ),
-        ],
-      },
-      {
-        title: "Está na hora de trocar?",
-        situation:
-          "Sua Persona favorita tem boa cobertura, mas suas habilidades já rendem pouco e as próximas não resolvem lacunas da equipe. Há uma fusão que mantém a cura e melhora a defesa.",
-        answers: [
-          a(
-            "Comparar resultado, herança e custo de recuperar os materiais",
-            "Você troca por ganho de função e segurança, não apenas por idade ou nível.",
-            true,
-          ),
-          a(
-            "Trocar sempre a cada três níveis",
-            "Não existe esse intervalo universal.",
-          ),
-          a(
-            "Nunca fundir uma Persona favorita",
-            "Você pode registrar e recuperar materiais. Apego não precisa impedir o desenvolvimento da equipe.",
-          ),
-        ],
-      },
-      {
-        title: "Qual ataque compensa?",
-        situation:
-          "Restam 8 SP e há mais encontros. Um ataque barato explora a mesma fraqueza que uma magia muito mais cara; ambos derrubariam o alvo.",
-        answers: [
-          a(
-            "Sempre usar a habilidade mais cara",
-            "Pode desperdiçar o recurso necessário para continuar explorando.",
-          ),
-          a(
-            "Escolher pelo nome mais impressionante",
-            "O nome não informa o custo de oportunidade.",
-          ),
-          a(
-            "Usar a opção eficiente e guardar recursos",
-            "Se o resultado tático é o mesmo, conservar SP melhora a sustentabilidade. Se houver risco de não derrotar, reavalie.",
-            true,
-          ),
-        ],
-      },
-    ];
-  if (lab === "fusion")
-    return [
-      {
-        title: "Antes de confirmar",
-        situation:
-          "Você melhorou as habilidades de uma Persona e vai usá-la como material. O registro no compêndio está desatualizado.",
-        answers: [
-          a(
-            "Registrar a versão atual e revisar a prévia",
-            "Assim você preserva o estado que pretende recuperar. A recuperação ainda pode custar dinheiro.",
-            true,
-          ),
-          a(
-            "Fundir: o registro sempre se atualiza sozinho",
-            "Não conte com registro automático das melhorias.",
-          ),
-          a(
-            "Apagar o registro para baratear",
-            "Isso não é uma estratégia válida para preservar habilidades.",
-          ),
-        ],
-      },
-      {
-        title: "A armadilha do número maior",
-        situation:
-          "O resultado da fusão tem nível maior, mas você perderia sua única cura. A herança permite preservar uma habilidade útil.",
-        answers: [
-          a(
-            "Trocar cura por um terceiro ataque redundante",
-            "Você deixa a equipe sem recuperação para ganhar redundância.",
-          ),
-          a(
-            "Preservar cura ou garantir outra fonte antes de fundir",
-            "Avalie a equipe inteira. A melhor escolha depende do papel que falta.",
-            true,
-          ),
-          a(
-            "Ignorar: o nível maior cura automaticamente",
-            "Nível não substitui uma habilidade ou item de recuperação.",
-          ),
-        ],
-      },
-      {
-        title: "A receita do vídeo não bate",
-        situation:
-          "Uma receita encontrada online dá um resultado diferente na prévia do seu jogo.",
-        answers: [
-          a(
-            "Confirmar e esperar que vire o resultado do vídeo",
-            "A prévia do seu jogo prevalece.",
-          ),
-          a(
-            "Concluir que qualquer fusão é aleatória",
-            "Fusões normais seguem regras; há exceções e eventos específicos.",
-          ),
-          a(
-            "Conferir edição, DLC e categoria de fusão",
-            "Tabelas e disponibilidade mudam entre edições. Receitas especiais e outras exceções não seguem uma fórmula universal.",
-            true,
-          ),
-        ],
-      },
-      {
-        title: "Herança com propósito",
-        situation:
-          "Você já tem cobertura de fogo e gelo. Está montando um Persona de suporte para encontros longos. Qual prioridade é mais coerente?",
-        answers: [
-          a(
-            "Cura e suporte permitidos pela herança",
-            "Confira as restrições na prévia. Você está preenchendo uma função ausente em vez de repetir ataques.",
-            true,
-          ),
-          a(
-            "Mais duas magias do mesmo elemento já coberto",
-            "Pode ser útil em casos específicos, mas não atende ao objetivo de suporte proposto.",
-          ),
-          a(
-            "Qualquer habilidade rara, sem olhar custo",
-            "Raridade não garante sinergia nem SP para usar.",
-          ),
-        ],
-      },
-    ];
-  return [
-    {
-      title: "Existe uma prioridade urgente?",
-      situation:
-        "O prazo para concluir uma exploração obrigatória está próximo. Você tem recursos e ainda não concluiu o objetivo.",
-      answers: [
-        a(
-          "Ignorar o prazo para maximizar um atributo",
-          "Melhorar atributos não elimina a obrigação de concluir o objetivo.",
-        ),
-        a(
-          game === "p3r"
-            ? "Planejar a exploração noturna e aproveitar a tarde disponível"
-            : "Reservar tempo para concluir a exploração com margem",
-          game === "p3r"
-            ? "Em Reload, explorar acontece à noite. Preserve a distinção de horários."
-            : "Criar margem reduz o risco de faltar tempo ou recursos.",
-          true,
-        ),
-        a(
-          "Esperar o último momento para descobrir os requisitos",
-          "Alguns objetivos exigem preparação ou etapas adicionais. Não presuma que tudo cabe num único slot.",
-        ),
-      ],
-    },
-    {
-      title: "Encontro não é rank garantido",
-      situation:
-        "O jogo indica que o vínculo ainda não vai subir. Você tem uma Persona da Arcana correspondente.",
-      answers: [
-        a(
-          "O encontro é inútil porque não sobe rank",
-          "Pontos de afinidade podem preparar o próximo avanço.",
-        ),
-        a(
-          "A Arcana correspondente garante rank imediato",
-          "Ela pode aumentar os pontos relevantes, mas não ignora requisitos ou limiares.",
-        ),
-        a(
-          "Avaliar se os pontos preparam um avanço e comparar outras opções",
-          "Você distingue afinidade de rank e considera o custo de oportunidade.",
-          true,
-        ),
-      ],
-    },
-    {
-      title: "Cinema, estudo ou exploração?",
-      situation:
-        "Não há prazo urgente. Um vínculo está bloqueado por um atributo. Há uma atividade disponível que melhora esse atributo.",
-      answers: [
-        a(
-          "Treinar esse requisito e conferir o custo de tempo",
-          "Você conecta a atividade a uma necessidade concreta. O bônus depende da edição e da atividade.",
-          true,
-        ),
-        a(
-          "Ir à dungeon porque subir nível resolve o requisito social",
-          "Nível de combate não substitui atributos sociais.",
-        ),
-        a(
-          "Repetir encontros sem conferir o bloqueio",
-          "Pontos de afinidade não resolvem necessariamente um requisito de atributo.",
-        ),
-      ],
-    },
-    {
-      title: "A chuva é uma regra universal?",
-      situation:
-        "Está chovendo. Um conselho online diz que sempre é obrigatório estudar nesse clima.",
-      answers: [
-        a(
-          "Seguir sem olhar objetivos ou atividade",
-          "Isso transforma uma possibilidade em regra universal.",
-        ),
-        a(
-          "Conferir bônus, disponibilidade e objetivo atual",
-          "Algumas atividades ganham benefícios. A decisão depende do contexto, não apenas do clima.",
-          true,
-        ),
-        a(
-          "Concluir que nenhum vínculo pode existir na chuva",
-          "Não generalize a disponibilidade de todos os vínculos e edições.",
-        ),
-      ],
-    },
-  ];
+  return [];
 }
+
 export const sources = [
+  {
+    title: "Alvos das habilidades · dados por edição",
+    url: "https://github.com/aqiu384/megaten-fusion-tool/tree/0b207612f6cdcff092e62af16f5c355271a1d892/src/app",
+    kind: "CONSULTADO · DADOS",
+    detail: "Conferidos os arquivos skill-data.json de p3r, p4 e p5: Media tem alvo All allies, Tarunda 1 foe, Rakukaja 1 ally. O modo livre agora respeita esses alvos; custos e potências continuam didáticos. Isso não valida uma reprodução completa do combate.",
+  },
+  {
+    title: "Fusão de mesma Arcana · implementação de referência",
+    url: "https://github.com/aqiu384/megaten-fusion-tool/blob/0b207612f6cdcff092e62af16f5c355271a1d892/src/app/compendium/fusions/per-nonelem-fusions.ts",
+    kind: "CONSULTADO · CÓDIGO",
+    detail: "Referência de seleção de resultados por níveis e categoria. O catálogo do site é um recorte até nível 35, sem todas as exceções, DLC ou fusões especiais. Use a prévia do seu jogo para confirmar.",
+  },
   {
     title: "Dados por edição · Megaten Fusion Tool",
     url: "https://github.com/aqiu384/megaten-fusion-tool",

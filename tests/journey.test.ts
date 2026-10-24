@@ -12,3 +12,12 @@ for(const game of ['p5r','p3r','p4g'] as const){
 test('salvamento malformado não injeta IDs e mantém isolamento por edição',()=>{const s=sanitizeJourney('p5r',{reserve:['pixie','pixie','bad'],level:NaN,allies:['aigis','ann']});assert.deepEqual(s.reserve,['pixie']);assert.equal(s.level,35);assert.deepEqual(s.allies,['ann']);assert.notDeepEqual(initialJourney('p5r').allies,initialJourney('p3r').allies);});
 test('fraqueza concede ação e transferência exige aliado elegível',()=>{let s=createFree('p5r',initialJourney('p5r'),'normal',['jack-frost']);s=freeScan(s,0);s=freeSwap(s,'jack-o-lantern');s=freeAction(s,'Agi',0,0);assert.equal(s.extra,true);assert.equal(s.round,1);assert.equal(s.actors[0].sp,60);const n=freePass(s,1);assert.equal(n.turn,1);assert.equal(freePass(n,0),n);const g=createFree('p4g',initialJourney('p4g'),'normal',['jack-frost']);g.extra=true;assert.equal(freePass(g,1),g);});
 test('dificuldade altera dano, sem inflar HP; Golden hard/very hard mantém dano',()=>{const state=initialJourney('p5r');const n=freeAction(createFree('p5r',state,'normal',['angel']),'Ataque',0,0);const h=freeAction(createFree('p5r',state,'hard',['angel']),'Ataque',0,0);assert.ok(n.enemies[0].hp<h.enemies[0].hp);assert.equal(n.enemies[0].max,h.enemies[0].max);assert.equal(difficulty.p4g.hard.out,difficulty.p4g.merciless.out);assert.notEqual(difficulty.p3r.merciless.weak,difficulty.p5r.merciless.weak);});
+test('Media cura o grupo vivo; Tarunda reduz apenas o inimigo selecionado',()=>{
+ let s=createFree('p5r',initialJourney('p5r'),'normal',['jack-frost','pixie']);
+ s.loadouts[s.active]=[{name:'Media',cost:6,kind:'heal'},{name:'Tarunda',cost:8,kind:'debuff'}];
+ s.actors[0].hp=90;s.actors[1].hp=120;s.actors[2].hp=0;
+ const healed=freeAction(s,'Media',0,2);
+ assert.equal(healed.actors[0].hp,150);assert.equal(healed.actors[1].hp,180);assert.equal(healed.actors[2].hp,0);assert.equal(s.actors[0].hp,90);
+ const weakened=freeAction(s,'Tarunda',1,0);
+ assert.equal(weakened.enemies[0].attackDown,0);assert.equal(weakened.enemies[1].attackDown,3);assert.equal(s.enemies[1].attackDown,0);
+});

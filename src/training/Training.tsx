@@ -121,7 +121,7 @@ export function Trail({
             Você aprende uma regra, testa na prática e recebe uma explicação
             para cada erro.
           </p>
-          <button className="primary" onClick={() => onGo(next[0])}>
+          <button className="primary" onClick={() => onGo(done.length ? next[0] : "learn")}>
             {done.length ? "Continuar meu treinamento" : "Começar do zero"}{" "}
             <ArrowRight size={19} />
           </button>
@@ -135,8 +135,8 @@ export function Trail({
             </b>
           </div>
           <span className="tiny">
-            Proporção do formato: uma explicação curta para quatro decisões. O
-            tempo depende do seu ritmo.
+            Comece pelas aulas explicadas e leve cada decisão para o simulador.
+            Avance no seu ritmo; consulte os termos sempre que precisar.
           </span>
         </div>
         <div className="training-hero-art">
@@ -822,7 +822,7 @@ function ModernCombat({
     </>
   );
 }
-export function SourceLibrary() {
+export function SourceLibrary({game}: {game: Game}) {
   return (
     <>
       <div className="module-intro">
@@ -832,6 +832,7 @@ export function SourceLibrary() {
           As fichas e receitas da jornada usam a base por edição de aqiu384. O manual do modo livre também lista as fontes de dificuldade e os limites do motor. Buscas de vídeos e discussões são material complementar, não conteúdo auditado.
         </p>
       </div>
+      <section className="panel"><h2>Como estudar um vídeo sem só assistir</h2><ol className="field-guide"><li>Confira o título da edição: Royal, Reload, Golden, Innocent Sin ou Eternal Punishment. Uma regra de outra versão pode mudar sua decisão.</li><li>Escolha uma pergunta: por que passar a ação? O que impede o rank? Qual habilidade foi preservada na fusão?</li><li>Pause antes da decisão do autor. Faça sua previsão e só depois compare a consequência mostrada.</li><li>Repita a situação no laboratório mudando um recurso ou condição. Explique por que sua escolha mudou.</li></ol><p>As buscas abaixo são complementares. Os vídeos não puderam ser assistidos nesta revisão; não são fontes validadas das aulas. Resultados externos podem mostrar história, chefes ou revelações.</p><div className="button-row">{(game==='p2'?['contacts tarot cards','fusion spells compatibility']:['combat beginner mechanics','social links confidants affinity rank','time management social stats','fusion inheritance compendium']).map(topic=><a className="secondary" key={topic} href={'https://www.youtube.com/results?search_query='+encodeURIComponent(games[game].name+' '+games[game].edition+' '+topic+' beginner no spoilers')} target="_blank" rel="noreferrer">{topic==='combat beginner mechanics'?'Vídeos: combate':topic==='social links confidants affinity rank'?'Vídeos: vínculos':topic==='time management social stats'?'Vídeos: planejamento':topic==='fusion inheritance compendium'?'Vídeos: fusão':topic}</a>)}</div></section>
       <div className="source-grid">
         {sources.map((s) => (
           <article className="panel" key={s.url}>

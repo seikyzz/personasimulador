@@ -1,3 +1,4 @@
+import { Foundations, ContextHelp } from "./academy/Learning";
 import React, { useState, useEffect } from "react";
 import {
   ArrowUpRight,
@@ -235,7 +236,7 @@ export default function App() {
               ))}
             </div>
           </div>
-          <EditionJourney game={game}><div key={game + page} className="page-enter">
+          <EditionJourney game={game}><div key={game + page} className="page-enter"><ContextHelp game={game} page={page} onLearn={() => go("learn")}/>
             {page === "home" && (
               <Trail
                 game={game}
@@ -252,71 +253,8 @@ export default function App() {
             {page === "team" && (game === "p2" ? <TeamModule game={game}/> : <><Reserve onFusion={() => go("fusion")}/><details className="extra-lab"><summary>Exercício complementar de cobertura</summary><PracticalLab lab="team" game={game} onMaster={() => mark("team")}/></details></>)}
             {page === "calendar" && (game === "p2" ? <CalendarModule game={game}/> : <><DayPlanner onTeam={() => go("team")} onSocial={() => go("social")}/><details className="extra-lab"><summary>Prova de planejamento</summary><PracticalLab lab="calendar" game={game} onMaster={() => mark("calendar")}/></details></>)}
             {page === "social" && (game === "p2" ? <SocialTrainer game={game} onEdition={setGame} onMaster={() => mark("social")}/> : <SocialWorkshop onMaster={() => mark("social")} onCalendar={() => go("calendar")} onFusion={() => go("fusion")}/>)}
-            {page === "sources" && <SourceLibrary />}
-            {page === "learn" && (
-              <>
-                <Intro
-                  eyebrow="SEU MANUAL SEM HISTÓRIA"
-                  title="Entenda. Depois, experimente."
-                  body="Conceitos para tomar suas próprias decisões. Leia a regra da edição antes de aplicar o que aprendeu em outro jogo."
-                />
-                <div className="notice">
-                  <BookOpen size={20} />
-                  <div>
-                    <strong>
-                      As regras de {g.name} {g.edition}
-                    </strong>
-                    <ul>
-                      {editionNotes[game].map((t) => (
-                        <li key={t}>{t}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="lesson-grid">
-                  {topics
-                    .filter((_, i) => game !== "p2" || ![2, 5, 6].includes(i))
-                    .map((t) => {
-                      const i = topics.indexOf(t);
-                      const done = completed.includes(`${game}:${i}`);
-                      return (
-                        <article className="lesson" key={t.title}>
-                          <span className="eyebrow">{t.tag}</span>
-                          <h3>{t.title}</h3>
-                          <p>{t.text}</p>
-                          <div className="practice">
-                            <Sparkles size={17} />
-                            {t.practice}
-                          </div>
-                          <button
-                            className={
-                              done ? "checked text-button" : "text-button"
-                            }
-                            onClick={() =>
-                              setCompleted(
-                                done
-                                  ? completed.filter(
-                                      (x) => x !== `${game}:${i}`,
-                                    )
-                                  : [...completed, `${game}:${i}`],
-                              )
-                            }
-                          >
-                            {done ? (
-                              <Check size={18} />
-                            ) : (
-                              <BookOpen size={18} />
-                            )}{" "}
-                            {done
-                              ? "Conceito estudado"
-                              : "Marcar como estudado"}
-                          </button>
-                        </article>
-                      );
-                    })}
-                </div>
-              </>
-            )}
+            {page === "sources" && <SourceLibrary game={game} />}
+            {page === "learn" && <Foundations game={game} onGo={go}/>}
           </div>
           </EditionJourney>
           <footer>
