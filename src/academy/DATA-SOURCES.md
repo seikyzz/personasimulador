@@ -10,3 +10,11 @@ Recorte ilustrado até nível 35. Fusão normal dupla, níveis base, sem DLC/esp
 - Aulas e cenas de vínculos são textos didáticos originais. Não são transcrições de guias, diálogos oficiais ou tabelas de afinidade de personagens. Cada correção de diálogo avalia o pedido explícito da cena fictícia.
 - YouTube, Fandom, Atlus, GameFAQs, wikiwiki.jp e Gamewith ficaram inacessíveis na rede desta revisão. Nenhum vídeo foi assistido ou usado como citação verificada. As buscas por assunto e edição na página de fontes são sugestões de estudo externo, não referências auditadas.
 - Os multiplicadores de dificuldade já presentes no projeto foram preservados; as fontes externas deles não puderam ser revalidadas nesta revisão. Não equivalem à fórmula completa de combate.
+
+## Referência enviada pelo usuário e preservação visual
+
+Recebido o link `https://www.youtube.com/watch?v=oOxHjaNohFM`, atribuído pelo usuário ao canal CritZy, junto a um resumo parcial. A consulta ao vídeo foi bloqueada (403); título, autoria e transcrição ainda não foram conferidos. O trecho termina antes da tabela de prioridades; os outros dois vídeos citados não foram recebidos. Não foi possível afirmar que houve extração completa.
+
+A adaptação não incorpora informações de finais, datas de desbloqueio de conteúdo narrativo ou dungeons ligadas à história. “Concluir em um dia” foi tratado como estratégia de economia de períodos, não requisito universal ou garantia de maximização. A atribuição de disponibilidade e regras específicas ainda precisa de evidência por edição.
+
+A biblioteca voltou aos cartões com ícones; as aulas complementares usam os componentes existentes. O elenco social voltou aos botões com retratos e à cena de diálogo já existente. O CSS de aprendizado que afetava componentes globais foi removido.

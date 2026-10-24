@@ -10,7 +10,7 @@ test('Persona 2 mantém sistemas próprios',async({page})=>{await page.goto('/')
 test('módulos novos são responsivos e não geram erros em quatro temas',async({page})=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');for(const width of [1440,390,320]){await page.setViewportSize({width,height:900});for(const edition of ['Persona 5 ROYAL','Persona 3 RELOAD','Persona 4 GOLDEN']){await nav(page,edition);for(const name of ['Minha equipe','Laboratório de fusão','Como usar meu dia','Treino de vínculos']){await nav(page,name);await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}await nav(page,'Simulador de batalha');await nav(page,'Modo livre · minha equipe');await nav(page,'Iniciar batalha livre');await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}await nav(page,'Persona 2 IS / EP');await nav(page,'Minha equipe');await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}expect(errors).toEqual([]);});
 
 test('iniciante aprende termos, registra primeira previsão e mantém progresso por edição',async({page})=>{
- await page.goto('/');await nav(page,'Começar do zero');
+ await page.goto('/');await nav(page,'Biblioteca de mecânicas');await page.getByText('Aulas explicadas · exemplos, termos e prática',{exact:true}).click();
  await expect(page.getByRole('heading',{name:'Do nome estranho à decisão que faz sentido.'})).toBeVisible();
  await page.locator('.lesson-reading').getByText('Baton Pass',{exact:true}).click();
  await expect(page.locator('.lesson-reading')).toContainText('transfere a oportunidade');
@@ -18,14 +18,14 @@ test('iniciante aprende termos, registra primeira previsão e mantém progresso 
  await expect(page.getByRole('status')).toContainText('não derruba B');
  await expect(page.locator('.foundations .answer-options button').nth(1)).toBeDisabled();
  await nav(page,'Próxima previsão');await page.locator('.foundations .answer-options button').nth(2).click();await nav(page,'Conferir previsão');await nav(page,'Revisar esta aula');
- await expect(page.getByRole('heading',{name:'1/2 previsões corretas'})).toBeVisible();await page.reload();await nav(page,'Biblioteca de mecânicas');await expect(page.locator('.lesson-tabs')).toContainText('1/2 previsões corretas');
- await nav(page,'Persona 4 GOLDEN');await expect(page.locator('.lesson-tabs')).not.toContainText('1/2 previsões corretas');await expect(page.locator('.lesson-reading')).toContainText('Golden, quem ganhou usa a ação');
+ await expect(page.getByRole('heading',{name:'1/2 previsões corretas'})).toBeVisible();await page.reload();await nav(page,'Biblioteca de mecânicas');await page.getByText('Aulas explicadas · exemplos, termos e prática',{exact:true}).click();await expect(page.locator('.lesson-tabs')).toContainText('1/2 previsões corretas');
+ await nav(page,'Persona 4 GOLDEN');await page.getByText('Aulas explicadas · exemplos, termos e prática',{exact:true}).click();await expect(page.locator('.lesson-tabs')).not.toContainText('1/2 previsões corretas');await expect(page.locator('.lesson-reading')).toContainText('Golden, quem ganhou usa a ação');
 });
 test('conversas mudam com personagem e contexto; erro não pode ser apagado',async({page})=>{
  await page.goto('/');await nav(page,'Persona 4 GOLDEN');await nav(page,'Treino de vínculos');await nav(page,'Yukiko');
  for(const [i,answer,reason] of [[0,0,1],[1,1,0]]){await page.locator('.answer-options>button').nth(answer).click();await page.getByLabel('Qual regra sustenta sua decisão?').selectOption(String(reason));await nav(page,'Conferir meu raciocínio');await nav(page,'Próximo caso →');}
- await expect(page.locator('.social-brief')).toContainText('comparar o tempo');
- await expect.poll(()=>page.locator('.social-brief img').evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);
+ await expect(page.locator('.dialogue-text')).toContainText('comparar o tempo');
+ await expect.poll(()=>page.locator('.social-portrait').evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);
  await page.locator('.answer-options>button').nth(0).click();await page.getByLabel('Qual regra sustenta sua decisão?').selectOption('1');await nav(page,'Conferir meu raciocínio');await expect(page.getByRole('status')).toContainText('gosto pessoal');await expect(page.locator('.answer-options>button').nth(2)).toBeDisabled();
  await page.getByLabel('Condições do ensaio').selectOption('advanced');await expect(page.locator('.situation')).toContainText('requisito de atributo');await expect(page.getByRole('button',{name:'Conferir meu raciocínio'})).toBeDisabled();
 });
@@ -34,5 +34,11 @@ test('calendário identifica quando adiar exploração torna o prazo impossível
 });
 test('aulas e termos funcionam em tela pequena nas quatro edições',async({page})=>{
  await page.setViewportSize({width:320,height:900});await page.goto('/');await nav(page,'Biblioteca de mecânicas');
- for(const edition of ['Persona 5 ROYAL','Persona 3 RELOAD','Persona 4 GOLDEN','Persona 2 IS / EP']){await nav(page,edition);await page.locator('.term-grid summary').first().click();await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}
+ for(const edition of ['Persona 5 ROYAL','Persona 3 RELOAD','Persona 4 GOLDEN','Persona 2 IS / EP']){await nav(page,edition);await page.getByText('Aulas explicadas · exemplos, termos e prática',{exact:true}).click();await page.locator('.term-grid summary').first().click();await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}
+});
+
+test('preserva cartões com ícones e retratos sociais ao trocar de edição',async({page})=>{
+ await page.goto('/');await nav(page,'Biblioteca de mecânicas');await expect(page.locator('.lesson-grid .lesson')).toHaveCount(8);await expect(page.locator('.lesson-grid .lesson svg').first()).toBeVisible();await expect(page.locator('.foundations')).not.toBeVisible();
+ await nav(page,'Treino de vínculos');await expect(page.locator('.social-cast img')).toHaveCount(3);
+ for(const name of ['Yukiko','Aigis','Chie']){await nav(page,name);await expect(page.locator('.social-portrait')).toBeVisible();await expect.poll(()=>page.locator('.social-portrait').evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);await expect(page.locator('.social-label strong')).toHaveText(name);}
 });

@@ -57,10 +57,12 @@ Nenhuma publicação é necessária para testar localmente. O código original d
 
 ## Aprendizado para quem está começando
 
-“Começar do zero” abre seis aulas nos jogos modernos (e uma introdução própria para Persona 2): termos em português, explicação, exemplo resolvido, previsão com correção e aplicação no simulador. O progresso de previsões fica em `va-foundations-v1-<edição>` e não substitui a aprovação dos exercícios de combate. O glossário também pode ser aberto nas telas de prática.
+Na biblioteca original, “Aulas explicadas · exemplos, termos e prática” abre seis aulas nos jogos modernos (e uma introdução própria para Persona 2): termos em português, explicação, exemplo resolvido, previsão com correção e aplicação no simulador. O progresso de previsões fica em `va-foundations-v1-<edição>` e não substitui a aprovação dos exercícios de combate. O glossário também pode ser aberto nas telas de prática.
 
 Vínculos oferecem dois ensaios com condições diferentes e cenas inéditas para Chie/Yukiko (Golden), Aigis (Reload, retrato clássico) e interlocutor fictício em Royal. As respostas ficam travadas depois da avaliação: errar não pode ser apagado escolhendo todas as alternativas. A correção explica a decisão e o motivo. Não há pontuação oficial dos personagens nem garantia de maximização no jogo.
 
 O planejador calcula horários compatíveis restantes e alerta quando adiar a exploração torna o prazo impossível. O modo livre oferece previsão opcional de afinidade e feedback contextual. Media agora cura aliados vivos em grupo; Tarunda afeta somente o inimigo selecionado. Os demais limites do motor continuam explícitos.
 
 A página de fontes contém buscas de vídeos por assunto e edição e um método para estudar ativamente. Essas buscas não equivalem a vídeos assistidos: consulte `src/academy/DATA-SOURCES.md` para o registro de evidências e limitações desta revisão.
+
+A revisão visual preserva a biblioteca de cartões e os estilos originais. Retratos sociais usam novamente `.social-cast`, `.social-scene`, `.social-portrait` e `.dialogue-box`; explicações extras usam `.extra-lab`, sem folha de estilos global adicional.

@@ -121,7 +121,7 @@ export function Trail({
             Você aprende uma regra, testa na prática e recebe uma explicação
             para cada erro.
           </p>
-          <button className="primary" onClick={() => onGo(done.length ? next[0] : "learn")}>
+          <button className="primary" onClick={() => onGo(next[0])}>
             {done.length ? "Continuar meu treinamento" : "Começar do zero"}{" "}
             <ArrowRight size={19} />
           </button>

@@ -137,6 +137,12 @@ export function questions(lab: Lab, game: Game): Question[] {
 
 export const sources = [
   {
+    title: "Persona 4 Golden: The Ultimate Beginner Tips (Do This First) · CritZy",
+    url: "https://www.youtube.com/watch?v=oOxHjaNohFM",
+    kind: "ENVIADO PELO USUÁRIO · VÍDEO NÃO VERIFICADO",
+    detail: "Link e resumo fornecidos pelo usuário. O vídeo não pôde ser acessado nesta rede; a atribuição e a transcrição não foram conferidas. O resumo mistura estratégia de otimização com informações de história. O site aproveita apenas princípios sem spoilers e não apresenta terminar toda dungeon em um dia como obrigação.",
+  },
+  {
     title: "Alvos das habilidades · dados por edição",
     url: "https://github.com/aqiu384/megaten-fusion-tool/tree/0b207612f6cdcff092e62af16f5c355271a1d892/src/app",
     kind: "CONSULTADO · DADOS",
