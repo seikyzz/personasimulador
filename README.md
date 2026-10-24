@@ -66,3 +66,11 @@ O planejador calcula horários compatíveis restantes e alerta quando adiar a ex
 A página de fontes contém buscas de vídeos por assunto e edição e um método para estudar ativamente. Essas buscas não equivalem a vídeos assistidos: consulte `src/academy/DATA-SOURCES.md` para o registro de evidências e limitações desta revisão.
 
 A revisão visual preserva a biblioteca de cartões e os estilos originais. Retratos sociais usam novamente `.social-cast`, `.social-scene`, `.social-portrait` e `.dialogue-box`; explicações extras usam `.extra-lab`, sem folha de estilos global adicional.
+
+## Dossiê completo e prática por edição
+
+Na **Biblioteca de mecânicas**, abra **Guia do dossiê · sistemas, decisões e laboratórios**. Os cartões existentes foram reutilizados; a biblioteca original e os retratos continuam presentes. Golden, Reload, Royal e os estudos separados de Portable, Innocent Sin e Eternal Punishment oferecem explicação, decisão com feedback e acesso à prática relacionada. Conteúdo narrativo foi excluído. A revisão por seção está em `public/REVISAO-DOSSIE.md`; os vídeos fornecidos ficaram inacessíveis e não foram apresentados como verificados.
+
+Laboratórios funcionais: retorno de investimento de tempo, orçamento de recursos, mão de cartas com escolhas/penalidades/transformações e Sweep de treino (Golden), contatos e sequência abstrata (Persona 2). Os resultados de cartas não alteram atributos reais da reserva. Selecionar Portable no guia não altera o motor de Reload.
+
+O modo livre ganhou custos por edição para habilidades suportadas, físico com gasto percentual de HP, ataques em área, Tarukaja/Rakunda, preparação de golpe, itens limitados e retirada. Continuar uma incursão preserva HP/SP e estoque. Dois cenários adicionais iniciam com ataque forte anunciado ou SP baixo. A IA didática em Hard/Merciless procura fraquezas expostas; análise mostra sua intenção. Não é a IA original nem a fórmula completa de combate. Animação de impacto e ícones reutilizam os recursos visuais existentes.

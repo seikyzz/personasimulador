@@ -1,0 +1,1592 @@
+{
+  "p4g": {
+    "Agi": {
+      "name": "Agi",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Agilao": {
+      "name": "Agilao",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 100
+    },
+    "Maragi": {
+      "name": "Maragi",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Maragion": {
+      "name": "Maragion",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Fogo",
+      "power": 100
+    },
+    "Garu": {
+      "name": "Garu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 40
+    },
+    "Garula": {
+      "name": "Garula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 100
+    },
+    "Magaru": {
+      "name": "Magaru",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 40
+    },
+    "Magarula": {
+      "name": "Magarula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 100
+    },
+    "Bufu": {
+      "name": "Bufu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Bufula": {
+      "name": "Bufula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Mabufu": {
+      "name": "Mabufu",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Mabufula": {
+      "name": "Mabufula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Zio": {
+      "name": "Zio",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 40
+    },
+    "Zionga": {
+      "name": "Zionga",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Mazio": {
+      "name": "Mazio",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 40
+    },
+    "Mazionga": {
+      "name": "Mazionga",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Bash": {
+      "name": "Bash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 60
+    },
+    "Cleave": {
+      "name": "Cleave",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 5,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 65
+    },
+    "Assault Dive": {
+      "name": "Assault Dive",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 100
+    },
+    "Sonic Punch": {
+      "name": "Sonic Punch",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 75
+    },
+    "Double Fangs": {
+      "name": "Double Fangs",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 40
+    },
+    "Kill Rush": {
+      "name": "Kill Rush",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 50
+    },
+    "Swift Strike": {
+      "name": "Swift Strike",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 12,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 65
+    },
+    "Twin Shot": {
+      "name": "Twin Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 55
+    },
+    "Fatal End": {
+      "name": "Fatal End",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 125
+    },
+    "Power Slash": {
+      "name": "Power Slash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 120
+    },
+    "Gale Slash": {
+      "name": "Gale Slash",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 12,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 80
+    },
+    "Single Shot": {
+      "name": "Single Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 85
+    },
+    "Skewer": {
+      "name": "Skewer",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 5,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 70
+    },
+    "Poison Skewer": {
+      "name": "Poison Skewer",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 60
+    },
+    "Skull Cracker": {
+      "name": "Skull Cracker",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 60
+    },
+    "Mind Slice": {
+      "name": "Mind Slice",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 14,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 90
+    },
+    "Hysterical Slap": {
+      "name": "Hysterical Slap",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 50
+    },
+    "Muzzle Shot": {
+      "name": "Muzzle Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 60
+    },
+    "Arm Chopper": {
+      "name": "Arm Chopper",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 45
+    },
+    "Atom Smasher": {
+      "name": "Atom Smasher",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 50
+    },
+    "Cell Breaker": {
+      "name": "Cell Breaker",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 80
+    },
+    "Brain Shake": {
+      "name": "Brain Shake",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 50
+    },
+    "Rampage": {
+      "name": "Rampage",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 12,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 40
+    },
+    "Cruel Attack": {
+      "name": "Cruel Attack",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 120
+    },
+    "Dia": {
+      "name": "Dia",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 3,
+      "resource": "sp",
+      "all": false
+    },
+    "Diarama": {
+      "name": "Diarama",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 6,
+      "resource": "sp",
+      "all": false
+    },
+    "Media": {
+      "name": "Media",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 7,
+      "resource": "sp",
+      "all": true
+    },
+    "Mediarama": {
+      "name": "Mediarama",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 12,
+      "resource": "sp",
+      "all": true
+    },
+    "Tarunda": {
+      "name": "Tarunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakunda": {
+      "name": "Rakunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "sp",
+      "all": false
+    },
+    "Tarukaja": {
+      "name": "Tarukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 12,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakukaja": {
+      "name": "Rakukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 12,
+      "resource": "sp",
+      "all": false
+    },
+    "Power Charge": {
+      "name": "Power Charge",
+      "kind": "charge",
+      "target": "-",
+      "cost": 15,
+      "resource": "sp",
+      "all": false
+    },
+    "Mind Charge": {
+      "name": "Mind Charge",
+      "kind": "charge",
+      "target": "-",
+      "cost": 15,
+      "resource": "sp",
+      "all": false
+    }
+  },
+  "p3r": {
+    "Agi": {
+      "name": "Agi",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 3,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Agilao": {
+      "name": "Agilao",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 100
+    },
+    "Maragi": {
+      "name": "Maragi",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 8,
+      "resource": "sp",
+      "all": true,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Maragion": {
+      "name": "Maragion",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 14,
+      "resource": "sp",
+      "all": true,
+      "element": "Fogo",
+      "power": 100
+    },
+    "Bufu": {
+      "name": "Bufu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Bufula": {
+      "name": "Bufula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Mabufu": {
+      "name": "Mabufu",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Mabufula": {
+      "name": "Mabufula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Garu": {
+      "name": "Garu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 3,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 40
+    },
+    "Garula": {
+      "name": "Garula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 100
+    },
+    "Magaru": {
+      "name": "Magaru",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 8,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 40
+    },
+    "Magarula": {
+      "name": "Magarula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 14,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 100
+    },
+    "Zio": {
+      "name": "Zio",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 40
+    },
+    "Zionga": {
+      "name": "Zionga",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Ziodyne": {
+      "name": "Ziodyne",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 220
+    },
+    "Mazio": {
+      "name": "Mazio",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 40
+    },
+    "Mazionga": {
+      "name": "Mazionga",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Megido": {
+      "name": "Megido",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 20,
+      "resource": "sp",
+      "all": true,
+      "element": "Onipotente",
+      "power": 170
+    },
+    "Power Slash": {
+      "name": "Power Slash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 7,
+      "resource": "hp",
+      "all": false,
+      "element": "Corte",
+      "power": 50
+    },
+    "Fatal End": {
+      "name": "Fatal End",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Corte",
+      "power": 110
+    },
+    "Vacuum Slash": {
+      "name": "Vacuum Slash",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 14,
+      "resource": "hp",
+      "all": true,
+      "element": "Corte",
+      "power": 85
+    },
+    "Blade of Fury": {
+      "name": "Blade of Fury",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 17,
+      "resource": "hp",
+      "all": true,
+      "element": "Corte",
+      "power": 42
+    },
+    "Deathbound": {
+      "name": "Deathbound",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 19,
+      "resource": "hp",
+      "all": true,
+      "element": "Corte",
+      "power": 350
+    },
+    "Getsu-ei": {
+      "name": "Getsu-ei",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 13,
+      "resource": "hp",
+      "all": false,
+      "element": "Corte",
+      "power": 180
+    },
+    "Zan-ei": {
+      "name": "Zan-ei",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Corte",
+      "power": 100
+    },
+    "Bash": {
+      "name": "Bash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 7,
+      "resource": "hp",
+      "all": false,
+      "element": "Impacto",
+      "power": 50
+    },
+    "Assault Dive": {
+      "name": "Assault Dive",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 11,
+      "resource": "hp",
+      "all": false,
+      "element": "Impacto",
+      "power": 120
+    },
+    "Swift Strike": {
+      "name": "Swift Strike",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 15,
+      "resource": "hp",
+      "all": true,
+      "element": "Impacto",
+      "power": 60
+    },
+    "Herculean Strike": {
+      "name": "Herculean Strike",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 17,
+      "resource": "hp",
+      "all": true,
+      "element": "Impacto",
+      "power": 230
+    },
+    "Sonic Punch": {
+      "name": "Sonic Punch",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Impacto",
+      "power": 70
+    },
+    "Single Shot": {
+      "name": "Single Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "hp",
+      "all": false,
+      "element": "Perfuração",
+      "power": 45
+    },
+    "Holy Arrow": {
+      "name": "Holy Arrow",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Perfuração",
+      "power": 65
+    },
+    "Torrent Shot": {
+      "name": "Torrent Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 11,
+      "resource": "hp",
+      "all": false,
+      "element": "Perfuração",
+      "power": 30
+    },
+    "Arrow Rain": {
+      "name": "Arrow Rain",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "hp",
+      "all": true,
+      "element": "Perfuração",
+      "power": 27
+    },
+    "Cruel Attack": {
+      "name": "Cruel Attack",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 13,
+      "resource": "hp",
+      "all": false,
+      "element": "Perfuração",
+      "power": 200
+    },
+    "Dia": {
+      "name": "Dia",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 3,
+      "resource": "sp",
+      "all": false
+    },
+    "Diarama": {
+      "name": "Diarama",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Media": {
+      "name": "Media",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 7,
+      "resource": "sp",
+      "all": true
+    },
+    "Mediarama": {
+      "name": "Mediarama",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 16,
+      "resource": "sp",
+      "all": true
+    },
+    "Tarukaja": {
+      "name": "Tarukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakukaja": {
+      "name": "Rakukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Tarunda": {
+      "name": "Tarunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakunda": {
+      "name": "Rakunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Charge": {
+      "name": "Charge",
+      "kind": "charge",
+      "target": "1 ally",
+      "cost": 30,
+      "resource": "sp",
+      "all": false
+    },
+    "Jack Brothers": {
+      "name": "Jack Brothers",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 1001,
+      "resource": "sp",
+      "all": true,
+      "element": "Onipotente",
+      "power": 80
+    },
+    "King and I": {
+      "name": "King and I",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 1001,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 180
+    },
+    "Scarlet Havoc": {
+      "name": "Scarlet Havoc",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 1001,
+      "resource": "sp",
+      "all": true,
+      "element": "Corte",
+      "power": 250
+    }
+  },
+  "p5r": {
+    "Agi": {
+      "name": "Agi",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Agilao": {
+      "name": "Agilao",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 100
+    },
+    "Agidyne": {
+      "name": "Agidyne",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "sp",
+      "all": false,
+      "element": "Fogo",
+      "power": 160
+    },
+    "Maragi": {
+      "name": "Maragi",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Fogo",
+      "power": 40
+    },
+    "Bufu": {
+      "name": "Bufu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Bufula": {
+      "name": "Bufula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Mabufu": {
+      "name": "Mabufu",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 40
+    },
+    "Mabufula": {
+      "name": "Mabufula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Gelo",
+      "power": 100
+    },
+    "Garu": {
+      "name": "Garu",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 3,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 40
+    },
+    "Garula": {
+      "name": "Garula",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "sp",
+      "all": false,
+      "element": "Vento",
+      "power": 100
+    },
+    "Magaru": {
+      "name": "Magaru",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 8,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 40
+    },
+    "Magarula": {
+      "name": "Magarula",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 14,
+      "resource": "sp",
+      "all": true,
+      "element": "Vento",
+      "power": 100
+    },
+    "Zio": {
+      "name": "Zio",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 40
+    },
+    "Zionga": {
+      "name": "Zionga",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Ziodyne": {
+      "name": "Ziodyne",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "sp",
+      "all": false,
+      "element": "Eletricidade",
+      "power": 160
+    },
+    "Mazionga": {
+      "name": "Mazionga",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 100
+    },
+    "Maziodyne": {
+      "name": "Maziodyne",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 22,
+      "resource": "sp",
+      "all": true,
+      "element": "Eletricidade",
+      "power": 160
+    },
+    "Kouha": {
+      "name": "Kouha",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Luz",
+      "power": 50
+    },
+    "Kouga": {
+      "name": "Kouga",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Luz",
+      "power": 120
+    },
+    "Makouha": {
+      "name": "Makouha",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Luz",
+      "power": 50
+    },
+    "Makouga": {
+      "name": "Makouga",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Luz",
+      "power": 120
+    },
+    "Eiha": {
+      "name": "Eiha",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Trevas",
+      "power": 50
+    },
+    "Eiga": {
+      "name": "Eiga",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Trevas",
+      "power": 120
+    },
+    "Maeiga": {
+      "name": "Maeiga",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "sp",
+      "all": true,
+      "element": "Trevas",
+      "power": 120
+    },
+    "Megidola": {
+      "name": "Megidola",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 24,
+      "resource": "sp",
+      "all": true,
+      "element": "Onipotente",
+      "power": 180
+    },
+    "Frei": {
+      "name": "Frei",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Nuclear",
+      "power": 40
+    },
+    "Freila": {
+      "name": "Freila",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Nuclear",
+      "power": 100
+    },
+    "Mafrei": {
+      "name": "Mafrei",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Nuclear",
+      "power": 40
+    },
+    "Psi": {
+      "name": "Psi",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 4,
+      "resource": "sp",
+      "all": false,
+      "element": "Psíquico",
+      "power": 40
+    },
+    "Psio": {
+      "name": "Psio",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false,
+      "element": "Psíquico",
+      "power": 100
+    },
+    "Mapsi": {
+      "name": "Mapsi",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 10,
+      "resource": "sp",
+      "all": true,
+      "element": "Psíquico",
+      "power": 40
+    },
+    "Lunge": {
+      "name": "Lunge",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 5,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 60
+    },
+    "Assault Dive": {
+      "name": "Assault Dive",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 13,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 130
+    },
+    "Lucky Punch": {
+      "name": "Lucky Punch",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 3,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 25
+    },
+    "Miracle Punch": {
+      "name": "Miracle Punch",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 80
+    },
+    "Cleave": {
+      "name": "Cleave",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 6,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 65
+    },
+    "Giant Slice": {
+      "name": "Giant Slice",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 90
+    },
+    "Cornered Fang": {
+      "name": "Cornered Fang",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 225
+    },
+    "Rising Slash": {
+      "name": "Rising Slash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 140
+    },
+    "Snap": {
+      "name": "Snap",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Arma",
+      "power": 80
+    },
+    "Vajra Blast": {
+      "name": "Vajra Blast",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 13,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 80
+    },
+    "Rampage": {
+      "name": "Rampage",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 13,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 30
+    },
+    "Swift Strike": {
+      "name": "Swift Strike",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 17,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 20
+    },
+    "Double Fangs": {
+      "name": "Double Fangs",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 40
+    },
+    "Skull Cracker": {
+      "name": "Skull Cracker",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 100
+    },
+    "Terror Claw": {
+      "name": "Terror Claw",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 70
+    },
+    "Headbutt": {
+      "name": "Headbutt",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 80
+    },
+    "Dream Needle": {
+      "name": "Dream Needle",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "hp",
+      "all": false,
+      "element": "Arma",
+      "power": 70
+    },
+    "Hysterical Slap": {
+      "name": "Hysterical Slap",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 80
+    },
+    "Brain Shake": {
+      "name": "Brain Shake",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 9,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 80
+    },
+    "Flash Bomb": {
+      "name": "Flash Bomb",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 19,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 100
+    },
+    "Mind Slice": {
+      "name": "Mind Slice",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 19,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 110
+    },
+    "Memory Blow": {
+      "name": "Memory Blow",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 15,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 70
+    },
+    "Dormin Rush": {
+      "name": "Dormin Rush",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 80
+    },
+    "Oni Kagura": {
+      "name": "Oni Kagura",
+      "kind": "hit",
+      "target": "All foes",
+      "cost": 16,
+      "resource": "hp",
+      "all": true,
+      "element": "Físico",
+      "power": 80
+    },
+    "Dia": {
+      "name": "Dia",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 3,
+      "resource": "sp",
+      "all": false
+    },
+    "Diarama": {
+      "name": "Diarama",
+      "kind": "heal",
+      "target": "1 ally",
+      "cost": 6,
+      "resource": "sp",
+      "all": false
+    },
+    "Media": {
+      "name": "Media",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 7,
+      "resource": "sp",
+      "all": true
+    },
+    "Mediarama": {
+      "name": "Mediarama",
+      "kind": "heal",
+      "target": "All allies",
+      "cost": 12,
+      "resource": "sp",
+      "all": true
+    },
+    "Tarukaja": {
+      "name": "Tarukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakukaja": {
+      "name": "Rakukaja",
+      "kind": "buff",
+      "target": "1 ally",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Tarunda": {
+      "name": "Tarunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Rakunda": {
+      "name": "Rakunda",
+      "kind": "debuff",
+      "target": "1 foe",
+      "cost": 8,
+      "resource": "sp",
+      "all": false
+    },
+    "Charge": {
+      "name": "Charge",
+      "kind": "charge",
+      "target": "Self",
+      "cost": 15,
+      "resource": "sp",
+      "all": false
+    },
+    "Kill Rush": {
+      "name": "Kill Rush",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 14,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 40
+    },
+    "Double Shot": {
+      "name": "Double Shot",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 12,
+      "resource": "hp",
+      "all": false,
+      "element": "Arma",
+      "power": 50
+    },
+    "Power Slash": {
+      "name": "Power Slash",
+      "kind": "hit",
+      "target": "1 foe",
+      "cost": 10,
+      "resource": "hp",
+      "all": false,
+      "element": "Físico",
+      "power": 100
+    }
+  }
+}

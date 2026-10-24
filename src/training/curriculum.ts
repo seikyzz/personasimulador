@@ -137,6 +137,18 @@ export function questions(lab: Lab, game: Game): Question[] {
 
 export const sources = [
   {
+    title: "How To MAX Your Persona’s Stats in Persona 4 Golden · Tiller Bric",
+    url: "https://www.youtube.com/watch?v=m50xMSJpgv4",
+    kind: "DOSSIÊ DO USUÁRIO · VÍDEO NÃO ACESSÍVEL",
+    detail: "O resumo fornecido descreve otimização de atributos por cartas. O laboratório ensina escolha, penalidades e ordem; não promete recuperação infinita nem reproduz uma transcrição auditada do vídeo.",
+  },
+  {
+    title: "PERSONA 4 GOLDEN FOR BEGINNERS · SuperButterBuns",
+    url: "https://www.youtube.com/watch?v=G0rJafN26c8",
+    kind: "DOSSIÊ DO USUÁRIO · VÍDEO NÃO ACESSÍVEL",
+    detail: "Referência enviada para fundamentos e preparação. Título e atribuição vêm do dossiê. Conteúdo narrativo e instruções de finais foram omitidos da adaptação do site.",
+  },
+  {
     title: "Persona 4 Golden: The Ultimate Beginner Tips (Do This First) · CritZy",
     url: "https://www.youtube.com/watch?v=oOxHjaNohFM",
     kind: "ENVIADO PELO USUÁRIO · VÍDEO NÃO VERIFICADO",

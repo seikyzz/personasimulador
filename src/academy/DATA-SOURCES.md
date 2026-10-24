@@ -18,3 +18,13 @@ Recebido o link `https://www.youtube.com/watch?v=oOxHjaNohFM`, atribuído pelo u
 A adaptação não incorpora informações de finais, datas de desbloqueio de conteúdo narrativo ou dungeons ligadas à história. “Concluir em um dia” foi tratado como estratégia de economia de períodos, não requisito universal ou garantia de maximização. A atribuição de disponibilidade e regras específicas ainda precisa de evidência por edição.
 
 A biblioteca voltou aos cartões com ícones; as aulas complementares usam os componentes existentes. O elenco social voltou aos botões com retratos e à cena de diálogo já existente. O CSS de aprendizado que afetava componentes globais foi removido.
+
+## Dossiê completo e motor livre — 24/10/2026
+
+O documento completo foi lido. A análise por seção está publicada, sem reproduzir spoilers, em `public/REVISAO-DOSSIE.md`. Os três vídeos retornaram bloqueio de rede; nenhum foi apresentado como assistido. Recomendações absolutas foram qualificadas e tabelas não verificadas não viraram dados factuais do simulador.
+
+`combat-skills.json` foi extraído por `scripts/import-combat-skills.py` da mesma revisão `0b207612f6cdcff092e62af16f5c355271a1d892` de aqiu384/megaten-fusion-tool. Usa skill-data + complementos Golden/Royal, selecionando habilidades de dano, cura e um subconjunto de suporte. O custo codificado >=1000 foi convertido em SP; custos físicos em percentuais de HP máximo. Os alvos individuais/grupo e elementos são preservados. O motor não replica efeitos secundários, multi-hit, precisão, críticos e todas as passivas. Potência importada serve de referência para uma fórmula normalizada de treino, não a fórmula original. Charge usa multiplicador didático; suporte dura três fases inimigas neste motor.
+
+Conferidos separadamente níveis e aprendizados de Ame-no-Uzume, Taotie e Black Frost em Golden, além dos metadados de Invigorate 1 e Revolution. Não é suficiente para afirmar uma receita completa, disponibilidade de história ou probabilidade de cartas.
+
+As seleções Portable e IS/EP são modos de estudo com exercícios explícitos. Não foram anunciadas como motores de batalha equivalentes a essas edições. Os laboratórios de tempo, orçamento, cartas e contatos usam números/ações fictícios para ensinar decisões e deixam esses limites visíveis.

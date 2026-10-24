@@ -38,7 +38,22 @@ test('aulas e termos funcionam em tela pequena nas quatro edições',async({page
 });
 
 test('preserva cartões com ícones e retratos sociais ao trocar de edição',async({page})=>{
- await page.goto('/');await nav(page,'Biblioteca de mecânicas');await expect(page.locator('.lesson-grid .lesson')).toHaveCount(8);await expect(page.locator('.lesson-grid .lesson svg').first()).toBeVisible();await expect(page.locator('.foundations')).not.toBeVisible();
+ await page.goto('/');await nav(page,'Biblioteca de mecânicas');await expect(page.locator('.lesson-grid .lesson:visible')).toHaveCount(8);await expect(page.locator('.lesson-grid .lesson:visible svg').first()).toBeVisible();await expect(page.locator('.foundations')).not.toBeVisible();
  await nav(page,'Treino de vínculos');await expect(page.locator('.social-cast img')).toHaveCount(3);
  for(const name of ['Yukiko','Aigis','Chie']){await nav(page,name);await expect(page.locator('.social-portrait')).toBeVisible();await expect.poll(()=>page.locator('.social-portrait').evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);await expect(page.locator('.social-label strong')).toHaveText(name);}
+});
+test('guia do dossiê abre versões próprias e avalia antes de liberar nova tentativa',async({page})=>{
+ await page.goto('/');await nav(page,'Persona 3 RELOAD');await nav(page,'Biblioteca de mecânicas');await page.getByText('Guia do dossiê · sistemas, decisões e laboratórios',{exact:true}).click();await page.getByLabel('Versão estudada neste guia').selectOption('p3p');const card=page.locator('article.lesson').filter({hasText:'Portable e Reload: o que não pode ser misturado'});await card.getByRole('button',{name:'Estudar e praticar'}).click();await expect(page.getByText('O motor de batalha do site continua sendo o de Reload',{exact:false})).toBeVisible();await page.getByRole('button',{name:'Conferir decisão do guia'}).scrollIntoViewIfNeeded();await page.locator('.answer-options:visible').last().getByRole('button').nth(0).click();await nav(page,'Conferir decisão do guia');await expect(page.getByRole('status')).toContainText('A mecânica não está em Portable');await expect(page.locator('.answer-options:visible').last().getByRole('button').nth(1)).toBeDisabled();
+});
+test('Shuffle de Golden tem efeitos, penalidades e passagem para outra mão',async({page})=>{
+ await page.goto('/');await nav(page,'Persona 4 GOLDEN');await nav(page,'Simulador de batalha');await nav(page,'Shuffle Time · escolhas de recompensa');
+ for(const name of [/^Mais duas escolhas/,/^Mais uma escolha/,/^Atributo \+1/,/Transformar restantes/,/^Dinheiro/])await page.getByRole('button',{name}).click();
+ await expect(page.getByText('Sweep: você recolheu toda a mão.',{exact:true})).toBeVisible();await nav(page,'Simular próxima mão com duas escolhas extras');await expect(page.locator('.metrics')).toContainText('3escolhas restantes');
+});
+test('batalha com SP limitado usa item e permite encerrar incursão',async({page})=>{
+ await page.goto('/');await nav(page,'Simulador de batalha');await nav(page,'Modo livre · minha equipe');await page.getByLabel('Objetivo do encontro').selectOption('economy');await nav(page,'Iniciar batalha livre');await expect(page.locator('.party-status')).toContainText('16/64 SP');await page.getByText('Itens · estoque desta incursão',{exact:true}).click();await page.getByRole('button',{name:/Recuperador de SP de treino/}).click();await expect(page.locator('.party-status')).toContainText('36/64 SP');await expect(page.getByRole('heading',{name:'Comando de Ryuji'})).toBeVisible();await nav(page,'Encerrar incursão e voltar para preparar');await expect(page.getByRole('heading',{name:'Você escolheu preservar a próxima tentativa.'})).toBeVisible();
+});
+test('conteúdo do dossiê reutiliza layout existente em celular',async({page})=>{
+ await page.setViewportSize({width:320,height:900});await page.goto('/');await nav(page,'Biblioteca de mecânicas');
+ for(const edition of ['Persona 5 ROYAL','Persona 3 RELOAD','Persona 4 GOLDEN','Persona 2 IS / EP']){await nav(page,edition);await page.getByText('Guia do dossiê · sistemas, decisões e laboratórios',{exact:true}).click();await page.getByRole('button',{name:'Estudar e praticar'}).first().click();await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}
 });

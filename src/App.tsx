@@ -1,3 +1,4 @@
+import { FieldGuide } from "./academy/FieldGuide";
 import { Foundations, ContextHelp } from "./academy/Learning";
 import React, { useState, useEffect } from "react";
 import {
@@ -274,6 +275,7 @@ export default function App() {
                     </ul>
                   </div>
                 </div>
+                <details className="extra-lab"><summary>Guia do dossiê · sistemas, decisões e laboratórios</summary><FieldGuide game={game} onGo={go}/></details>
                 <details className="extra-lab"><summary>Aulas explicadas · exemplos, termos e prática</summary><Foundations game={game} onGo={go}/></details>
                 <div className="lesson-grid">
                   {topics
